@@ -1,0 +1,2 @@
+<case name="Case at: 2008-12-11T16:53:30.000Z(atdesk)"><location>CASLThirdFloorCubeF</location><time>1630-1700</time><activity>overhour</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-11T18:30:00.000Z(atdesk)"><time>1830-1900</time><activity>overhour</activity><calendar>busy</calendar><situation>atdesk</situation></case>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!-- if there are problems with the logger setup turn debuggin on (true) -->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+
+<!--
+log4j.rootLogger=debug
+
+# Log all info messages for knox.test to console and file
+log4j.logger.scatterbox.test=INFO, stdout
+# Log all warn messages for cbml and fionn to console o
+log4j.logger.cbml=WARN, stdout, R
+log4j.logger.fionn=WARN, stdout, R
+
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
+# Pattern to output the caller's file name and line number.
+log4j.appender.stdout.layout.ConversionPattern=%5p [%t] (%F:%L) - %m%n
+
+log4j.appender.R=org.apache.log4j.RollingFileAppender
+log4j.appender.R.File=logs/example.log
+
+log4j.appender.R.MaxFileSize=100KB
+# Keep one backup file
+log4j.appender.R.MaxBackupIndex=1
+
+log4j.appender.R.layout=org.apache.log4j.PatternLayout
+log4j.appender.R.layout.ConversionPattern=%p %t %c - %m%n
+-->
+		<!-- Putting short info messages from scatterbox to the console -->
+        <appender name="scatterbox.test_info_console" class="org.apache.log4j.ConsoleAppender"> 
+                <param name="Target" value="System.out"/> 
+    			<layout class="org.apache.log4j.PatternLayout"> 
+                        <param name="ConversionPattern" value="%m%n"/> 
+                </layout> 
+                <filter class="org.apache.log4j.varia.LevelMatchFilter">
+                        <param name="LevelToMatch" value="info" />
+                        <param name="AcceptOnMatch" value="true"/>
+                </filter>
+                <filter class="org.apache.log4j.varia.DenyAllFilter" />
+        </appender> 
+
+		<!-- Putting detailed info messages from scatterbox to a logs/scatterbox.info.log -->
+        <appender name="scatterbox.test_info_file" class="org.apache.log4j.FileAppender"> 
+                <param name="File" value="logs/scatterbox.info.log"/> 
+                <layout class="org.apache.log4j.PatternLayout"> 
+                        <param name="ConversionPattern" value="%5p [%t] (%F:%L) - %m%n"/> 
+                </layout> 
+                <filter class="org.apache.log4j.varia.LevelMatchFilter">
+                        <param name="LevelToMatch" value="info" />
+                        <param name="AcceptOnMatch" value="true"/>
+                </filter>
+                <filter class="org.apache.log4j.varia.DenyAllFilter" />
+        </appender> 
+
+        <!-- Putting detailed warn messages from cbml/fionn to the console -->
+        <appender name="cbmlfionn_warn_console" class="org.apache.log4j.ConsoleAppender"> 
+                <param name="Target" value="System.out"/> 
+    			<layout class="org.apache.log4j.PatternLayout"> 
+                        <param name="ConversionPattern" value="%5p [%t] (%F:%L) - %m%n"/> 
+                </layout> 
+                <filter class="org.apache.log4j.varia.LevelMatchFilter">
+                        <param name="LevelToMatch" value="warn" />
+                        <param name="AcceptOnMatch" value="true"/>
+                </filter>
+                <filter class="org.apache.log4j.varia.DenyAllFilter" />
+        </appender> 
+        
+		<!-- Putting detailed info messages from cbml/fionn to a logs/cbml.info.log -->
+        <appender name="cbmlfionn_info_file" class="org.apache.log4j.FileAppender"> 
+                <param name="File" value="logs/cbml.info.log"/> 
+                <layout class="org.apache.log4j.PatternLayout"> 
+                        <param name="ConversionPattern" value="%5p [%t] (%F:%L) - %m%n"/> 
+                </layout> 
+                <filter class="org.apache.log4j.varia.LevelMatchFilter">
+                        <param name="LevelToMatch" value="info" />
+                        <param name="AcceptOnMatch" value="true"/>
+                </filter>
+                <filter class="org.apache.log4j.varia.DenyAllFilter" />
+        </appender> 
+
+      <!--  <root> 
+                <level value="info"/> 
+                 
+        </root> 
+        -->
+        <logger name="scatterbox.test" additivity="false">
+   			<level value="info" />
+                <appender-ref ref="scatterbox.test_info_console" />
+                <appender-ref ref="scatterbox.test_info_file" />
+		</logger>
+        <logger name="cbml" additivity="false">
+   			<level value="info" />
+            <appender-ref ref="cbmlfionn_info_file" />
+		</logger>
+		<logger name="cbml" additivity="false">
+   			<level value="warn" />
+            <appender-ref ref="cbmlfionn_warn_console" />
+		</logger>
+		
+		
+</log4j:configuration>

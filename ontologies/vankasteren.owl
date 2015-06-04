@@ -1,0 +1,597 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY sensor "http://ontonym.org/0.8/sensor#" >
+    <!ENTITY location "http://ontonym.org/0.8/location#" >
+    <!ENTITY resource "http://ontonym.org/0.8/resource#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY muo "http://purl.oclc.org/NET/muo/muo#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY vankasteren "http://ontonym.org/0.8/vankasteren.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY muo-vocab "file:/Users/knoxs/Documents/workspace/ontonym/0.8/muo-vocab.owl#" >
+    <!ENTITY physical-quality "file:/Users/knoxs/Documents/workspace/ontonym/0.8/physical-quality/" >
+]>
+
+
+<rdf:RDF xmlns="http://ontonym.org/0.8/vankasteren.owl#"
+     xml:base="http://ontonym.org/0.8/vankasteren.owl"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:muo-vocab="file:/Users/knoxs/Documents/workspace/ontonym/0.8/muo-vocab.owl#"
+     xmlns:physical-quality="file:/Users/knoxs/Documents/workspace/ontonym/0.8/physical-quality/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:resource="http://ontonym.org/0.8/resource#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:sensor="http://ontonym.org/0.8/sensor#"
+     xmlns:vankasteren="http://ontonym.org/0.8/vankasteren.owl#"
+     xmlns:muo="http://purl.oclc.org/NET/muo/muo#"
+     xmlns:location="http://ontonym.org/0.8/location#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="">
+        <rdfs:comment
+            >This ontology describes the locations and devices within the tim van kasteren sensing environment.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/Users/knoxs/Documents/workspace/ontonym/0.8/muo-vocab.owl#measuredIn -->
+
+    <owl:ObjectProperty rdf:about="&muo-vocab;measuredIn"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/location#adjacent -->
+
+    <owl:ObjectProperty rdf:about="&location;adjacent"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/location#connected -->
+
+    <owl:ObjectProperty rdf:about="&location;connected">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontonym.org/0.8/location#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="&location;locatedIn">
+        <rdfs:range rdf:resource="&location;Space"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="#attachedTo"/>
+            <rdf:Description rdf:about="&location;locatedIn"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontonym.org/0.8/sensor#observedBy -->
+
+    <owl:ObjectProperty rdf:about="&sensor;observedBy"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#attachedTo -->
+
+    <owl:ObjectProperty rdf:about="#attachedTo">
+        <rdfs:range rdf:resource="&resource;PhysicalResource"/>
+        <rdfs:domain rdf:resource="&sensor;Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#kasterencoverage -->
+
+    <owl:ObjectProperty rdf:about="#kasterencoverage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#kasterenValue -->
+
+    <owl:DatatypeProperty rdf:about="#kasterenValue">
+        <rdfs:subPropertyOf rdf:resource="#observationvalue"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#observationvalue -->
+
+    <owl:DatatypeProperty rdf:about="#observationvalue">
+        <rdfs:domain rdf:resource="&sensor;Observation"/>
+        <rdfs:range>
+            <rdf:Description>
+                <rdf:type rdf:resource="&owl;DataRange"/>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;integer">0</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;integer">1</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdf:Description>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#weight -->
+
+    <owl:DatatypeProperty rdf:about="#weight">
+        <rdfs:domain rdf:resource="#vankasterensensor"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontonym.org/0.8/location#Space -->
+
+    <owl:Class rdf:about="&location;Space"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/resource#PhysicalResource -->
+
+    <owl:Class rdf:about="&resource;PhysicalResource"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/sensor#Observation -->
+
+    <owl:Class rdf:about="&sensor;Observation"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/sensor#Sensor -->
+
+    <owl:Class rdf:about="&sensor;Sensor"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#vankasterenevent -->
+
+    <owl:Class rdf:about="#vankasterenevent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#observationvalue"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&sensor;Observation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#vankasterensensor -->
+
+    <owl:Class rdf:about="#vankasterensensor">
+        <rdfs:subClassOf rdf:resource="&sensor;Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#weight"/>
+                <owl:hasValue rdf:datatype="&xsd;double">1.0</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/muo/muo#QualityValue -->
+
+    <owl:Class rdf:about="&muo;QualityValue"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- file:/Users/knoxs/Documents/workspace/ontonym/0.8/physical-quality/action -->
+
+    <owl:Thing rdf:about="&physical-quality;action"/>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#bedroom -->
+
+    <owl:Thing rdf:about="#bedroom">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:adjacent rdf:resource="#kitchen"/>
+        <location:adjacent rdf:resource="#livingroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#bedroomdoorsensor -->
+
+    <owl:Thing rdf:about="#bedroomdoorsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#hallbedroomdoor"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#cupscupboard -->
+
+    <resource:PhysicalResource rdf:about="#cupscupboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#cupscupboardsensor -->
+
+    <owl:Thing rdf:about="#cupscupboardsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#cupscupboard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#dishwasher -->
+
+    <resource:PhysicalResource rdf:about="#dishwasher">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#dishwashersensor -->
+
+    <vankasterensensor rdf:about="#dishwashersensor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <attachedTo rdf:resource="#dishwasher"/>
+    </vankasterensensor>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#freezer -->
+
+    <owl:Thing rdf:about="#freezer">
+        <rdf:type rdf:resource="&resource;PhysicalResource"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#freezersensor -->
+
+    <owl:Thing rdf:about="#freezersensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#freezer"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#fridge -->
+
+    <resource:PhysicalResource rdf:about="#fridge">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#fridgesensor -->
+
+    <owl:Thing rdf:about="#fridgesensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#fridge"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#frontdoor -->
+
+    <resource:PhysicalResource rdf:about="#frontdoor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#hallway"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#frontdoorsensor -->
+
+    <vankasterensensor rdf:about="#frontdoorsensor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <attachedTo rdf:resource="#frontdoor"/>
+    </vankasterensensor>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#groceriescupboard -->
+
+    <resource:PhysicalResource rdf:about="#groceriescupboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#groceriescupboardsensor -->
+
+    <owl:Thing rdf:about="#groceriescupboardsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#groceriescupboard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#hallbedroomdoor -->
+
+    <owl:Thing rdf:about="#hallbedroomdoor">
+        <rdf:type rdf:resource="&resource;PhysicalResource"/>
+        <location:locatedIn rdf:resource="#bedroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#hallshowerdoor -->
+
+    <owl:Thing rdf:about="#hallshowerdoor">
+        <rdf:type rdf:resource="&resource;PhysicalResource"/>
+        <location:locatedIn rdf:resource="#showerroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#halltoiletdoor -->
+
+    <resource:PhysicalResource rdf:about="#halltoiletdoor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#toiletroom"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#hallway -->
+
+    <owl:Thing rdf:about="#hallway">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:connected rdf:resource="#bedroom"/>
+        <location:connected rdf:resource="#livingroom"/>
+        <location:connected rdf:resource="#office"/>
+        <location:connected rdf:resource="#showerroom"/>
+        <location:connected rdf:resource="#toiletroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#kitchen -->
+
+    <owl:Thing rdf:about="#kitchen">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:connected rdf:resource="#livingroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#livingroom -->
+
+    <owl:Thing rdf:about="#livingroom">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:adjacent rdf:resource="#bedroom"/>
+        <location:connected rdf:resource="#hallway"/>
+        <location:connected rdf:resource="#kitchen"/>
+        <location:adjacent rdf:resource="#office"/>
+        <location:adjacent rdf:resource="#showerroom"/>
+        <location:adjacent rdf:resource="#toiletroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#microwave -->
+
+    <resource:PhysicalResource rdf:about="#microwave">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#microwavesensor -->
+
+    <vankasterensensor rdf:about="#microwavesensor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <attachedTo rdf:resource="#microwave"/>
+    </vankasterensensor>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#office -->
+
+    <owl:Thing rdf:about="#office">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:adjacent rdf:resource="#livingroom"/>
+        <location:adjacent rdf:resource="#toiletroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#panscupboard -->
+
+    <resource:PhysicalResource rdf:about="#panscupboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#panscupboardsensor -->
+
+    <owl:Thing rdf:about="#panscupboardsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#panscupboard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#platescupboard -->
+
+    <resource:PhysicalResource rdf:about="#platescupboard">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#platescupboardsensor -->
+
+    <owl:Thing rdf:about="#platescupboardsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#platescupboard"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#showerdoorsensor -->
+
+    <owl:Thing rdf:about="#showerdoorsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#hallshowerdoor"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#showerroom -->
+
+    <owl:Thing rdf:about="#showerroom">
+        <rdf:type rdf:resource="&location;Space"/>
+        <location:adjacent rdf:resource="#toiletroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#testkasterenevent -->
+
+    <vankasterenevent rdf:about="#testkasterenevent">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <kasterenValue rdf:datatype="&xsd;int">1</kasterenValue>
+        <sensor:observedBy rdf:resource="#showerdoorsensor"/>
+    </vankasterenevent>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#toilet -->
+
+    <owl:Thing rdf:about="#toilet">
+        <rdf:type rdf:resource="&resource;PhysicalResource"/>
+        <location:locatedIn rdf:resource="#toiletroom"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#toiletdoorsensor -->
+
+    <owl:Thing rdf:about="#toiletdoorsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#halltoiletdoor"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#toiletflushsensor -->
+
+    <owl:Thing rdf:about="#toiletflushsensor">
+        <rdf:type rdf:resource="#vankasterensensor"/>
+        <attachedTo rdf:resource="#toilet"/>
+    </owl:Thing>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#toiletroom -->
+
+    <location:Space rdf:about="#toiletroom">
+        <rdf:type rdf:resource="&owl;Thing"/>
+    </location:Space>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#vankasterenqualityvalue -->
+
+    <muo:QualityValue rdf:about="#vankasterenqualityvalue">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <muo-vocab:measuredIn rdf:resource="&physical-quality;action"/>
+    </muo:QualityValue>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#washingmachine -->
+
+    <resource:PhysicalResource rdf:about="#washingmachine">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <location:locatedIn rdf:resource="#kitchen"/>
+    </resource:PhysicalResource>
+    
+
+
+    <!-- http://ontonym.org/0.8/vankasteren.owl#washingmachinesensor -->
+
+    <vankasterensensor rdf:about="#washingmachinesensor">
+        <rdf:type rdf:resource="&owl;Thing"/>
+        <attachedTo rdf:resource="#washingmachine"/>
+    </vankasterensensor>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 2.2.1.1138) http://owlapi.sourceforge.net -->
+

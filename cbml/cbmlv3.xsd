@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="case">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="structure" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="feature" maxOccurs="unbounded" type="structure_feature"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>	
+				<xs:element name="similarity" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="feature" minOccurs="0" maxOccurs="unbounded" type="similarity_feature"/>
+						</xs:sequence>
+						<xs:attribute name="username" type="xs:ID" use="required"/>
+						<xs:attribute name="extends" type="xs:IDREF" use="optional"/>
+					</xs:complexType>
+				</xs:element>				
+			</xs:choice>
+			<xs:attribute name="domain" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+			
+	<xs:complexType name="similarity_feature">
+		<xs:choice>
+			<xs:element name="complex" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="feature" minOccurs="0" maxOccurs="unbounded" type="similarity_feature"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="array" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="primary" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="secondary" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="name" type="xs:string" use="required"/>
+											<xs:attribute name="sim" type="xs:double" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="name" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="difference" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="graph"  minOccurs="0" maxOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="point" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="difference" type="xs:double" use="required"/>
+											<xs:attribute name="similarity" type="normalisedDouble" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>	
+								<xs:attribute name="type" type="graphType" default="exact"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="connection" minOccurs="0" maxOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="from" minOccurs="1" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="to" minOccurs="1" maxOccurs="unbounded">
+													<xs:complexType>
+														<xs:attribute name="value" type="xs:string" use="required"/>
+														<xs:attribute name="weight" type="xs:double" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+											<xs:attribute name="value" type="xs:string" use="required"/>																												
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="symmetrical" type="xs:boolean"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="type" type="differenceType" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="puresimilarity" minOccurs="1" maxOccurs="1">
+				<xs:complexType>
+					<xs:attribute name="similarityMeasure" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="weight" type="positiveDouble" use="required"/>	
+	</xs:complexType>
+	
+	<xs:simpleType name="positiveDouble">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+		
+	<xs:simpleType name="normalisedDouble">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="graphType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="exact"/>
+			<xs:enumeration value="symmetrical"/>
+			<xs:enumeration value="asymmetrical"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="differenceType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="exact"/>
+			<xs:enumeration value="numeric"/>
+			<xs:enumeration value="symboldistance"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	
+	<xs:complexType name="structure_feature">
+		<xs:choice>
+			<xs:element name="complex">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="feature" minOccurs="0" maxOccurs="unbounded" type="structure_feature"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="symbol">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="enumeration" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="string">
+				<xs:complexType>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="taxonomy">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="node" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="integer">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="maxInclusive" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="value" type="xs:int" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="minInclusive" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="value" type="xs:int" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:all>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="double">
+				<xs:complexType>
+					<xs:all>
+						<xs:element name="maxInclusive" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="value" type="xs:double" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="minInclusive" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="value" type="xs:double" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:all>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="boolean">
+				<xs:complexType>
+					<xs:attributeGroup ref="references"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="discriminant" use="optional" default="true" type="xs:boolean"/>
+		<xs:attribute name="solution"     use="optional" default="false" type="xs:boolean"/>
+		<xs:attribute name="manditory"    use="optional" default="true" type="xs:boolean"/>
+	</xs:complexType>
+
+	<xs:attributeGroup name="references">
+		<xs:attribute name="name" type="xs:ID" use="optional"/>
+		<xs:attribute name="ref" type="xs:IDREF" use="optional"/>
+	</xs:attributeGroup>
+	<xs:element name="enumeration">
+		<xs:complexType>
+			<xs:attribute name="value" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="node">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="node" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>

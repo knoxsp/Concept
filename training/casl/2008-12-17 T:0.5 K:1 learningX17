@@ -1,0 +1,2 @@
+<case name="Case at: 2008-12-17T16:00:30.000Z(atdesk)"><location>FourthFloorFoyer</location><time>1600-1630</time><activity>tenseconds</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-17T16:00:40.000Z(atdesk)"><location>FourthFloorFoyer</location><time>1600-1630</time><activity>minute</activity><situation>atdesk</situation></case>

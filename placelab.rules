@@ -1,0 +1,12 @@
+@prefix classifications: <http://ontonym.org/0.8/classifications.owl#>.
+@prefix provenance: <http://ontonym.org/0.8/provenance#>.
+@prefix placelab: <http://ontonym.org/0.8/placelab.owl#>.
+@prefix location: <http://ontonym.org/0.8/location#>.
+@prefix sensor: <http://ontonym.org/0.8/sensor#>.
+@prefix event: <http://ontonym.org/0.8/event#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+#[hasLocation: (?A rdf:type classifications:Situation) -> IdentifyOutlyingLocations(?A)]
+[hasLocation: (?A rdf:type classifications:Situation) -> GetPrimaryLocation(?A)]
+[colocatedfeatures: (?A classifications:primaryLocation ?B), (?A classifications:identifiedBy ?C), (?C classifications:feature ?D), (?D provenance:derivedFrom ?E),  (?E location:locatedIn ?B) -> (?C classifications:primaryFeature true)]

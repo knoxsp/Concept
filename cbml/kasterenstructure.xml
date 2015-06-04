@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case domain="pta.offer" xsi:noNamespaceSchemaLocation="/home/pta/xml/cbmlv3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<structure>
+	
+		<feature name="situation" discriminant="false" solution="true" manditory="false">
+			<taxonomy name="situations">
+						<node name="default"/>
+					   <node name="gotobed"/>
+					   <node name="usetoilet"/>
+					   <node name="preparebreakfast"/>
+					   <node name="takeshower"/>
+					   <node name="leavehouse"/>
+					   <node name="getdrink"/>
+					   <node name="preparedinner"/>
+			</taxonomy>
+		</feature>
+		
+		<feature name="time" manditory="false">
+			<symbol>
+				<enumeration value="800-830"/>
+				<enumeration value="830-900"/>
+				<enumeration value="900-930"/>
+				<enumeration value="930-1000"/>
+				<enumeration value="1000-1030"/>
+				<enumeration value="1030-1100"/>
+				<enumeration value="1100-1130"/>
+				<enumeration value="1130-1200"/>
+				<enumeration value="1200-1230"/>
+				<enumeration value="1230-1300"/>
+				<enumeration value="1300-1330"/>
+				<enumeration value="1330-1400"/>
+				<enumeration value="1400-1430"/>
+				<enumeration value="1430-1500"/>
+				<enumeration value="1500-1530"/>
+				<enumeration value="1530-1600"/>
+				<enumeration value="1600-1630"/>
+				<enumeration value="1630-1700"/>
+				<enumeration value="1700-1730"/>
+				<enumeration value="1730-1800"/>
+				<enumeration value="1800-1830"/>
+				<enumeration value="1830-1900"/>
+				<enumeration value="1900-1930"/>
+				<enumeration value="1930-2000"/>
+				<enumeration value="2000-2030"/>
+				<enumeration value="2030-2100"/>
+				<enumeration value="2100-2130"/>
+				<enumeration value="2130-2200"/>
+				<enumeration value="2200-2230"/>
+				<enumeration value="2230-2300"/>
+				<enumeration value="2300-2330"/>
+				<enumeration value="2330-2400"/>
+			</symbol>
+		</feature>
+		
+		
+		<feature name="hallbedroomdoor" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="halltoiletdoor" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="hallbathroomdoor" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="toiletflush" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="platescupboard" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="fridge" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="microwave" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="groceriescupboard" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="dishwasher" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="panscupboard" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="cupscupboard" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="frontdoor" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="freezer" manditory="false">
+			<string/>
+		</feature>
+		
+		<feature name="washingmachine" manditory="false">
+			<string/>
+		</feature>
+		
+		</structure>
+</case>	
+

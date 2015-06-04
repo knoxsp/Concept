@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case domain="pta.offer" xsi:noNamespaceSchemaLocation="/home/pta/xml/cbmlv3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<structure>
+	
+		<feature name="location" manditory="false">
+			<taxonomy name="Places">
+				<node name="NotInUCD">
+					<node name="home"/>
+				</node>
+				<node name="CASL">
+					<node name="CASLThirdFloor">
+						<node name="CASLThirdFloorCubeF">
+							<node name="KnoxDesk"/>
+							<node name="LorcanDesk"/>
+							<node name="AdoDesk"/>				
+						</node>
+						<node name="CASLThirdFloorCubeG">
+							<node name="GraemeDesk"/>
+							<node name="GrahamDesk"/>				
+						</node>
+						<node name="ThirdFloorFoyer"/>
+						<node name="simonOffice"/>
+						<node name="ThirdFloorCorridor"/>
+						<node name="aaronOffice"/>
+						<node name="paddyOffice"/>
+						<node name="joeOffice"/>
+						<node name="lukeOffice"/>
+						<node name = "internArea"/>
+					</node>
+					<node name="CASLFourthFloor">
+						<node name="FourthFloorFoyer">
+						<node name="CASLFourthFloorCommonArea"/>
+							<node name="CASLCommonRoomComfySeatingArea"/>
+							<node name="RocketFoods"/>
+							<node name="EatingArea"/>
+						</node>
+					</node>
+				</node>
+			</taxonomy>
+		</feature>	
+		
+		<feature name="situation" discriminant="false" solution="true" manditory="false">
+			<taxonomy name="situations">
+			<node name="default"/>
+			   <node name="atwork">
+				   <node name="break">
+					   <node name="coffee"/>
+					   <node name="lunch"/>
+				   </node>
+				   <node name="toilet"/>
+				   <node name="atdesk">
+				       <node name="activeatcomputer"/>
+				   </node>
+				   <node name="meeting"/>
+				   <node name="procrastinating"/>
+			   </node>
+			   <node name="notatwork">
+				   <node name="gonehome"/>
+			   </node>
+			</taxonomy>
+		</feature>
+		
+		<feature name="locationothers" manditory="false">
+			<taxonomy ref="Places"/>
+		</feature>
+		<feature name="time" manditory="false">
+			<symbol>
+				<enumeration value="weekend"/>
+				<enumeration value="830-900"/>
+				<enumeration value="900-930"/>
+				<enumeration value="930-1000"/>
+				<enumeration value="1000-1030"/>
+				<enumeration value="1030-1100"/>
+				<enumeration value="1100-1130"/>
+				<enumeration value="1130-1200"/>
+				<enumeration value="1200-1230"/>
+				<enumeration value="1230-1300"/>
+				<enumeration value="1300-1330"/>
+				<enumeration value="1330-1400"/>
+				<enumeration value="1400-1430"/>
+				<enumeration value="1430-1500"/>
+				<enumeration value="1500-1530"/>
+				<enumeration value="1530-1600"/>
+				<enumeration value="1600-1630"/>
+				<enumeration value="1630-1700"/>
+				<enumeration value="1700-1730"/>
+				<enumeration value="1730-1800"/>
+				<enumeration value="1800-1830"/>
+				<enumeration value="1830-1900"/>
+			</symbol>
+		</feature>
+		
+		<feature name="calendar" manditory="false">
+			<symbol>
+				<enumeration value="break"/>
+				<enumeration value="meeting"/>
+				<enumeration value="coffee"/>
+				<enumeration value="lunch"/>
+				<enumeration value="busy"/>
+			</symbol>
+		</feature>	
+		
+		<feature name="IM" manditory="false">
+			<symbol>
+				<enumeration value="available"/>
+				<enumeration value="idle"/>
+				<enumeration value="away"/>
+				<enumeration value="dnd"/>
+			</symbol>
+		</feature>	
+		
+		<feature name="activity" manditory="false">
+			<symbol>
+				<enumeration value="tenseconds"/>
+				<enumeration value="minute"/>
+				<enumeration value="hour"/>
+				<enumeration value="overhour"/>
+			</symbol>
+		</feature>	
+		
+		</structure>
+</case>	
+

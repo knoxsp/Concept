@@ -1,0 +1,2630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case domain="pta.offer" xsi:noNamespaceSchemaLocation="/home/pta/xml/cbmlv3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<structure>
+	
+		<feature name="location" manditory="false">
+			<taxonomy name="Places">
+				<node name="masterbedroom"/>
+				<node name="office"/>
+				<node name="officehallway"/>
+				<node name="kitchenhallway"/>
+				<node name="kitchen"/>
+				<node name="foyer"/>
+				<node name="diningroom"/>
+				<node name="powderroom"/>
+			</taxonomy>
+		</feature>	
+		
+		<feature name="situation" discriminant="false" solution="true" manditory="false">
+			<taxonomy name="situations">
+			<node name="default" />
+			<node name="alone" />
+			<node name="not alone" />
+			<node name="alone in room" />
+			  
+			<node name="using a computer"/>
+			<node name="using laptop" />
+				
+			  <node name="working studying">
+				<node name="doing paperwork" />
+				<node name="writing" />
+				<node name="reading printed material" />
+			  </node>
+			  
+			  <node name="healthcare">
+				<node name="taking medication or vitamins" />
+				<node name="performing healthcare" />
+			  </node>
+			  
+			  	<node name="using phone" >
+					<node name="using portable phone" />
+				</node>
+			
+			<node name="watching tv">
+				<node name="actively watching tv or movies" />
+				<node name="actively channel surfing TV" />
+				<node name="watching tv in the background" />
+			</node>
+				
+				<node name="working on a hobbie" />
+				<node name="meditating or praying" />
+				<node name="relaxing thinking" />
+				<node name="pet activity" />
+				<node name="listening to music or radio in the background" />
+				<node name="actively selecting music or radio stations" />
+				<node name="informationorleisure miscellaneous" />
+				<node name="reading paperorbookormagazine" />
+			  
+			  <node name="meal preparation">
+				<node name="cooking or warming food on microwave" />
+				<node name="retreiving ingredientsorcookware" />
+				<node name="cooking or warming food on oven" />
+				<node name="cooking or warming food on stovetop" />
+				<node name="meal preparation miscellaneous" />
+				<node name="choppingorslicingorgrating food" />
+				<node name="preparing a snack" />
+				<node name="preparing a meal" />
+				<node name="measuring" />
+				<node name="preparing a drink" />
+				<node name="washing ingredients" />
+				<node name="mixingorstirring food" />
+				<node name="preparing a meal in background" />
+				<node name="combiningoradding" />
+			  </node>
+			  
+			  <node name="cleaning">
+				<node name="scrubbing the floor" />
+				<node name="swiftering" />
+				<node name="cleaning in the background" />
+				<node name="wiping a surface" />
+				<node name="sweeping" />
+				<node name="mopping" />
+				<node name="putting things away" />
+				<node name="disposing garbage" />
+				<node name="vacumming" />
+				<node name="making the bed" />
+				<node name="cleaning miscellaneous" />
+				<node name="dusting" />
+				<node name="taking out trash" />
+			  </node>
+			  
+			  <node name="entering or leaving placelab">
+				<node name="leaving placelab" />
+				<node name="getting the mail" />
+				<node name="entering placelab" />
+			  </node>
+			  
+			  <node name="grooming">
+				<node name="shaving" />
+				<node name="drying hair" />
+				<node name="grooming miscellaneous" />
+				<node name="brushing or styling hair" />
+				<node name="putting up clothes" />
+				<node name="getting undressed" />
+				<node name="applying makeup" />
+				<node name="getting dressed" />
+			  </node>
+			  
+			  <node name="exercising">
+				<node name="stretching or doing yoga" />
+				<node name="exercising miscellaneous" />
+				<node name="doing aerobic exercises" />
+				<node name="walking for exercising" />
+				<node name="working with weights" />
+			  </node>
+			  
+			  <node name="hygiene">
+				<node name="brushing teeth" />
+				<node name="washing hands" />
+				<node name="flossing" />
+				<node name="washing face" />
+				<node name="bathing or showering" />
+				<node name="hygiene miscellaneous" />
+				<node name="toileting" />
+			  </node>
+			  
+			  <node name="laundry">
+				<node name="washer on in the background" />
+				<node name="unloading clothes dryer" />
+				<node name="dryer on in the background" />
+				<node name="unloading clothes washer" />
+				<node name="laundry miscellaneous" />
+				<node name="ironing" />
+				<node name="folding laundry" />
+				<node name="loading clothes dryer" />
+				<node name="putting away clothes" />
+				<node name="loading clothes washer" />
+				<node name="preparing clothes for laundry" />
+			  </node>
+			  
+			  <node name="eating">
+				<node name="drinking water or a beverage" />
+				<node name="eating a meal" />
+				<node name="eating a snack" />
+			  </node>
+			  
+			  <node name="dishwashing">
+				<node name="soaking dishes" />
+				<node name="putting away dishes" />
+				<node name="loading the dishwasher" />
+				<node name="dishwashing miscellaneous" />
+				<node name="hand washing or rinsing dishes" />
+				<node name="unloading the dishwasher" />
+				<node name="drying dishes" />
+				<node name="dishwasher on in the background" />
+			  </node>
+			  
+			  <node name="restingornappingorsleeping">
+				<node name="napping" />
+				<node name="waking up for the day" />
+				<node name="getting ready to sleep" />
+				<node name="sleeping deeply" />
+			  </node>
+			  
+			  <node name="yardwork">
+				<node name="yardwork miscellaneous" />
+				<node name="mowing lawn" />
+				<node name="gardening" />
+			  </node>
+			  <node name="watching tvANDeating" />
+			  <node name="listening to music or radio in the backgroundANDusing laptopANDusing phone" />
+			  <node name="meal preparationANDcleaning" />
+			  <node name="using a computerANDeating" />
+			  <node name="listening to music or radio in the backgroundANDusing laptopANDusing phoneANDeating" />
+			  <node name="watching tvANDeating" />
+			  <node name="using a computerANDwatching tv" />
+			  <node name="using a computerANDwatching tvANDreading paperorbookormagazine" />
+			  <node name="using a computerANDeating" />
+			  <node name="listening to music or radio in the backgroundANDgrooming" />
+			  <node name="watching tvANDeating" />
+			  <node name="watching tvANDusing phone" />
+			  <node name="watching tvANDmeal preparation" />
+			  <node name="listening to music or radio in the backgroundANDusing laptopANDusing phoneANDmeal preparation" />
+			  <node name="using phoneANDworking studying" />
+			  <node name="meal preparationANDdishwashing" />
+				<node name="using a computerANDreading paperorbookormagazine" />
+				<node name="unknown" />
+				<node name="reading paperorbookormagazineANDusing a computer" />
+				<node name="preparing a drinkANDputting things away" />
+				<node name="preparing a drinkANDmixingorstirring food" />
+				<node name="preparing a drinkANDretreiving ingredientsorcookware" />
+				<node name="preparing a drinkANDmeal preparation miscellaneous" />
+				<node name="using a computerANDusing phone" />
+				<node name="using a computerANDreading paperorbookormagazine" />
+				<node name="reading paperorbookormagazineANDusing a computerANDusing phone" />
+				<node name="reading paperorbookormagazineANDusing phone" />
+				<node name="preparing a drinkANDcombiningoradding" />
+				<node name="preparing a drinkANDhand washing or rinsing dishes" />
+				<node name="using a computerANDeating a meal" />
+				<node name="using a computerANDdrinking water or a beverage" />
+				<node name="using a computerANDreading paperorbookormagazineANDusing phone" />
+				<node name="actively watching tv or moviesANDusing phone" />
+				<node name="actively watching tv or moviesANDdrinking water or a beverage" />
+				<node name="actively watching tv or moviesANDeating a snack" />
+				<node name="actively watching tv or moviesANDdrinking water or a beverage" />
+				<node name="actively watching tv or moviesANDeating a meal" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDreading paperorbookormagazine" />
+				<node name="actively watching tv or moviesANDpreparing a drink" />
+				<node name="using a computerANDlistening to music or radio in the background" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDreading paperorbookormagazineANDusing phone" />
+				<node name="listening to music or radio in the backgroundANDgetting dressed" />
+				<node name="listening to music or radio in the backgroundANDgetting undressed" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDusing phone" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDusing phoneANDpreparing a drink" />
+				<node name="using phoneANDreading printed material" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDusing phoneANDdrinking water or a beverage" />
+				<node name="using a computerANDactively watching tv or movies" />
+				<node name="using a computerANDactively watching tv or moviesANDreading paperorbookormagazine" />
+				<node name="using a computerANDeating a snack" />
+				<node name="using a computerANDlistening to music or radio in the backgroundANDusing phone" />
+				<node name="using a computerANDusing portable phone" />
+				<node name="using a computerANDreading paperorbookormagazineANDusing portable phone" />
+				<node name="listening to music or radio in the backgroundANDusing laptopANDusing portable phone" />
+				<node name="using a computerANDlistening to music or radio in the backgroundANDusing portable phone" />
+				<node name="listening to music or radio in the backgroundANDusing laptopANDreading paperorbookormagazine" />
+				<node name="actively watching tv or moviesANDusing portable phone" />
+				<node name="listening to music or radio in the backgroundANDusing a computerANDreading paperorbookormagazineANDusing portable phone" />
+				<node name="listening to music or radio in the backgroundANDusing laptop" />
+				<node name="listening to music or radio in the backgroundANDusing laptopANDusing portable phoneANDdrinking water or a beverage" />
+				<node name="using portable phoneANDreading printed material" />
+				<node name="reading paperorbookormagazineANDusing portable phone" />
+				<node name="listening to music or radio in the backgroundANDusing laptopANDusing portable phoneANDpreparing a drink" />
+				<node name="reading paperorbookormagazineANDusing a computerANDusing portable phone" />
+			</taxonomy>
+		</feature>
+		
+		<feature name="time" manditory="false">
+			<symbol>
+				<enumeration value="000-030"/>
+				<enumeration value="030-100"/>
+				<enumeration value="100-130"/>
+				<enumeration value="130-200"/>
+				<enumeration value="200-230"/>
+				<enumeration value="230-300"/>
+				<enumeration value="300-330"/>
+				<enumeration value="330-400"/>
+				<enumeration value="400-430"/>
+				<enumeration value="430-500"/>
+				<enumeration value="500-530"/>
+				<enumeration value="530-600"/>
+				<enumeration value="600-630"/>
+				<enumeration value="630-700"/>
+				<enumeration value="700-730"/>
+				<enumeration value="730-800"/>
+				<enumeration value="800-830"/>
+				<enumeration value="830-900"/>
+				<enumeration value="900-930"/>
+				<enumeration value="930-1000"/>
+				<enumeration value="1000-1030"/>
+				<enumeration value="1030-1100"/>
+				<enumeration value="1100-1130"/>
+				<enumeration value="1130-1200"/>
+				<enumeration value="1200-1230"/>
+				<enumeration value="1230-1300"/>
+				<enumeration value="1300-1330"/>
+				<enumeration value="1330-1400"/>
+				<enumeration value="1400-1430"/>
+				<enumeration value="1430-1500"/>
+				<enumeration value="1500-1530"/>
+				<enumeration value="1530-1600"/>
+				<enumeration value="1630-1630"/>
+				<enumeration value="1700-1730"/>
+				<enumeration value="1730-1800"/>
+				<enumeration value="1800-1830"/>
+				<enumeration value="1830-1900"/>
+				<enumeration value="1900-1930"/>
+				<enumeration value="1930-2000"/>
+				<enumeration value="2000-2030"/>
+				<enumeration value="2030-2100"/>
+				<enumeration value="2100-2130"/>
+				<enumeration value="2130-2200"/>
+				<enumeration value="2200-2230"/>
+				<enumeration value="2230-2300"/>
+				<enumeration value="2300-2330"/>
+				<enumeration value="2330-2400"/>
+			</symbol>
+		</feature>
+		
+		<!--WATER-->
+		<feature name="PL_0A00000053D0D826" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1300000053D19026" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_4800000053C01026" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_5B00000053C56326" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_7200000053C0FE26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_7200000053D35C26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_7400000053D36926" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8E00000053D37126" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9900000053C0FB26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9A00000053D0E426" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A100000053C11F26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_AC00000053C0E926" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_D400000053D0CF26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DA00000053C12626" manditory="false">
+			<string/>
+		</feature>
+		
+		<!--GAS-->
+		
+		<feature name="PL_5B00000053C01E26" manditory="false">
+			<string/>
+		</feature>	
+		
+		<!--CURRENT-->
+		
+		<feature name="PL_3300000054008226" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_4700000054004726" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_9700000054002926" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_0B00000053B36B26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_1A00000053B37626" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_1E00000054004426" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_2300000054001A26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_2600000053F4F426" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_3300000053B28F26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_3800000053B34C26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_4700000053B35326" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_5400000053B35D26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_5600000054005A26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_6D00000053B46A26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_6D00000054003126" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_7200000053B34126" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_8300000053B29A26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_9000000053B29426" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_9500000054003A26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_9D00000053B36226" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_A600000054001D26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_AC00000053B35626" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_B300000054002626" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_B400000053B38226" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_B500000054001326" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_C000000053F50726" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_C000000054005326" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_CB00000053B28426" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_CE00000053B33E26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_D300000054005D26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_D700000053DFDE26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_E000000053B36E26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_E400000053B34826" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_E600000054004F26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_E800000054003626" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_EC00000054001026" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_F700000053F50626" manditory="false">
+			<string/>
+		</feature>	
+		
+		
+		<feature name="PL_030000004BFDA026" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_150000004C1DAD26" manditory="false">
+			<string/>
+		</feature>	
+		<feature name="PL_6E0000004C1D9426" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_680000004C1DA126" manditory="false">
+			<string/>
+		</feature>				
+		<feature name="PL_D30000004C005226" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8A0000004C005126" manditory="false">
+			<string/>
+		</feature>		
+		
+		<!--OBJECTMOTION-->
+		<feature name="PL_91" manditory="false">
+			<string/>
+		</feature>		
+<feature name="PL_218" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_260" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_261" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_281" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_283" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_297" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_315" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_317" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_326" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_327" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_369" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_407" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_420" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_501" manditory="false">
+			<string/>
+		</feature>
+  <feature name="PL_506" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_509" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_521" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_526" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_530" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_531" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_539" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_547" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_558" manditory="false">
+			<string/>
+		</feature>
+ <feature name="PL_574" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_581" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_583" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_585" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_589" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_591" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_594" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_597" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_599" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_600" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_603" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_604" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_605" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_606" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_607" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_609" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_611" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_616" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_619" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_621" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_622" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_623" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_624" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_625" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_629" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_630" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_631" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_634" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_638" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_639" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_640" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_644" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_645" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_648" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_649" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_653" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_655" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_656" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_657" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_659" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_661" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_662" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_665" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_666" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_667" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_669" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_670" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_677" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_678" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_679" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_681" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_682" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_684" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_685" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_688" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_690" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_691" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_693" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_697" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_699" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_701" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_702" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_703" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_707" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_708" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_713" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_715" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_724" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_725" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_728" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_729" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_730" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_731" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_733" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_736" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_737" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_738" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_739" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_741" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_747" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_748" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_749" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_750" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_755" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_758" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_760" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_762" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_767" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_768" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_772" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_774" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_776" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_777" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_778" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_782" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_786" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_789" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_792" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_793" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_794" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_797" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_800" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_900" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_951" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_953" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_956" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_960" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_961" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_963" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_965" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_967" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_970" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_972" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_974" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_975" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_978" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_979" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_980" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_981" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_983" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_986" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_987" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_988" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_989" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_990" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_991" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_994" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_995" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_996" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_997" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_999" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1005" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1007" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1008" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1009" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1011" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1012" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1013" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1014" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1015" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1016" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1017" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1018" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1019" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1020" manditory="false">
+			<string/>
+		</feature>
+<feature name="PL_1022" manditory="false">
+			<string/>
+		</feature>
+		
+		<!-- MITES MOTION -->
+		<feature name="PL_2126" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2081" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2119" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2099" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2117" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2106" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2108" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2088" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2090" manditory="false">
+			<string/>
+		</feature>
+
+ <feature name="PL_2118" manditory="false">
+			<string/>
+		</feature>
+		
+		<!--RFID-->
+		<feature name="PL_E00700001E22701F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227020" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227021" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227022" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227023" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227025" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227026" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227027" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227029" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22702A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22702D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22702F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227030" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227031" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227032" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227033" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227034" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227035" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227036" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227037" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227039" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22703A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22703C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22703D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22703E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22703F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227040" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227042" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227043" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227044" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227045" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227046" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227047" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227048" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227049" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22704A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22704B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC63751" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59C7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59C8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59C9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59CA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59D4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59D5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59D6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59D7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59E3" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59EF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59FF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A00" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A01" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A02" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A03" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A04" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A08" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A09" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A0C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A0E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A0F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A14" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A1B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A1D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A21" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A22" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A25" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A27" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A28" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A29" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A2A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A2C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A2D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A30" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A31" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A32" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A34" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A35" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5BB4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5BB6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5BB7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5BB8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D40" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D43" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D47" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D5F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D60" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D64" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D65" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D66" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D67" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D6C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D70" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D71" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D7A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D8C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D8D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D8E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D8F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D91" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D92" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D94" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D9C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5D9E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E76" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E78" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E7A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E88" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E89" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E8A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E8B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E8C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E92" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5E94" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7088" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F708C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71EA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71EB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71EC" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71DF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F2" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71FC" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7202" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7205" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7206" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7208" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F720E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F720F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7210" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7214" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7215" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F721A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7218" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F721F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7224" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7225" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7226" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7227" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7228" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F722C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F722D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F722E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7230" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7231" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7234" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7235" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F726B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F726C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F726D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7270" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7274" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F727F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7280" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7281" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7282" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7283" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7284" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7285" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7286" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7287" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7288" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7290" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7291" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7292" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7293" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7294" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7295" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F72A0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070001E1F72D6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F72D7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F72D9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F72DA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F72DB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078120ADC53180" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC63951" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64451" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64556" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64746" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00781BCC1955433" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC65549" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC66253" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC66761" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078120ADC47778" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC67860" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC68366" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078120ADC58370" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC68561" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC60D5F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6275F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC286E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC62C56" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC62D51" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC7320D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC7350E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC7360D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078967CDC6326E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6365F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC63E60" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC73F0D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC7460D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC7470D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64A60" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64E47" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC64F60" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6503F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6685C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC66B53" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC66C5C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC67A53" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC67A62" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6805C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078120ADC58F5F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6875F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC68B66" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC69A61" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71DD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E1" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71E2" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71EF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F1" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F3" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71F9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71FA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71FE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71FF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7200" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7201" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7203" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7207" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7209" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F720B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F720C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F720D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7211" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7216" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7217" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F721C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7221" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7222" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7229" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FCF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227072" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227067" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227088" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227087" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FBD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC1" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227060" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227079" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7289" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227076" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227001" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FCD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FCE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227083" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FCB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227051" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F726F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F728E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227055" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227050" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227078" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDC" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227073" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227056" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227068" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227075" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227061" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227064" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227053" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227080" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227081" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227082" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227065" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227000" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22700E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7297" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7296" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A33" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC2" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22704E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7273" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FBF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227089" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22708A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227062" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227074" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227066" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227077" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B59CF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD3" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FE3" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22706A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227071" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078120ADC55F15" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC65D61" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC62C68" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC6945E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0078067CDC62E51" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FCA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FD1" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFC" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227052" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227069" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22704F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22705F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227054" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227058" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227057" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227086" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FC4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22707E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FBE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227084" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F71FD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F722A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FEA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FEB" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FEC" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FED" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FEE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FEF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF1" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF2" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF3" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF5" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF6" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF7" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF8" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FF9" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFA" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFD" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFE" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FFF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227002" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227003" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227004" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227005" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227006" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227007" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227008" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227009" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22701D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22701E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227028" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22702B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22702C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227031" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227038" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227070" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A0B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E0070000242B5A2E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F727E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F727C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F727B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7272" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F727A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7279" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7278" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7277" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FDF" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FE0" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E226FE4" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22704C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729F" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22700A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22700B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22700C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22700D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227011" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227012" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227013" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227014" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227015" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729D" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F729E" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227017" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7269" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E1F7268" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E227019" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22701A" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22701B" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E00700001E22701C" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_2E00000022CDAD12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_6800000022C35412Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1E0008003AD70A10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8700000022B3E312Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8700000022B3E312Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_EA0008003AE29410" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_CB00000022C06412Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_CB00000022C06412Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E300000022B3BE12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_210008003AFCAF10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_210008003AFCAF10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1B00000022C23812Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_D70000004BFFDA26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E10000002234CE12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_750008003AFC4310" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1B00000022C23812Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E10000002234CE12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_AA00000022B46A12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_3700000022B4B912Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8700000022899B12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_5C00000022B41812Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DD000000222F7F12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_5C00000022B41812Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DD000000222F7F12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8F0008003AF2C510" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_0F0008003B01AA10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1200000022B43312Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9000000022242112Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9000000022242112Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_FB000000222B0712Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_350000002233C912Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_4B000000222E6F12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1700000053E30626" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A800000022B47912Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_FB000000222B0712Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1200000022B43312Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_2D00000022BBF912Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B000000022B4AD12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_AF0000003F4A1E26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9E0008003AFF6D10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A800000022B47912Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B000000022B4AD12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_D600000022B3AC12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_880008003AE78110" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_040000004C095D26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_FA0008003AE66810" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E6000000224B6D12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_29000000222E0712Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B7000000222D6912Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_5F0008003AEBF310" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_29000000222E0712Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B7000000222D6912Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_FB00000022B42512Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_8500000022B3F012Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A300000022583E12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_E6000000224B6D12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_D30008003AFAAD10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A300000022583E12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_2400000022B3F812Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_4700000022408612Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1500000022CFF412Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_FB00000022B42512Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_6A0008003AFC2710" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_4700000022408612Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1500000022CFF412Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_2B0008003AE3FE10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DA00000022C35212Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1E0000003F607F26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9E0000003F4A2A26" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B400000022CFFC12Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_D30008003AFBB410" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_CF0008003AE13510" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B400000022CFFC12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DA00000022C35212Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A00000002258A812Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_DD0008003AD67310" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1600000022B41512Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_080008003ADA1210" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_3700000022B4B912Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A00000002258A812Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_5300000022C47012Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_1600000022B41512Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_180000002239F512Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_890008003AE36010" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_0D0000003F607126" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_BD0008003AD43A10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_4A0000004C097626" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_C70008003AD82A10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_7E00000022B42212Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_130008003AE55510" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_7E00000022B42212Y" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_120000004C002126" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_0900000022A09C12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_230000004C001526" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_A90008003ACDDC10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_B2000000224CCE12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_49000000224B1C12Z" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_F20008003AD7BF10" manditory="false">
+			<string/>
+		</feature>
+		<feature name="PL_9D0008003AD16E10" manditory="false">
+			<string/>
+		</feature>
+		</structure>
+</case>	
+

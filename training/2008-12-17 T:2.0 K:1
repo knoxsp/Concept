@@ -1,0 +1,3 @@
+<case name="Case at: 2008-12-17T12:04:20.000Z(atdesk)"><location>CASLThirdFloor</location><time>1200-1230</time><activity>tenseconds</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-17T13:14:10.000Z(atdesk)"><location>CASLThirdFloorCubeG</location><time>1300-1330</time><activity>hour</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-17T13:30:10.000Z(atdesk)"><location>ThirdFloorCorridor</location><time>1330-1400</time><activity>minute</activity><situation>atdesk</situation></case>

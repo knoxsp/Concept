@@ -1,0 +1,37 @@
+@prefix classifications: <http://ontonym.org/0.8/classifications.owl#>.
+@prefix provenance: <http://ontonym.org/0.8/provenance#>.
+@prefix placelab: <http://ontonym.org/0.8/placelab.owl#>.
+@prefix location: <http://ontonym.org/0.8/location#>.
+@prefix sensor: <http://ontonym.org/0.8/sensor#>.
+@prefix event: <http://ontonym.org/0.8/event#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+
+#[printingrule: (?A samplestructure:status ?B) -> print(?A, ' : ', ?B)]
+#[subclassrule: (?A rdf:type ontonym:Situation), (?B rdf:type ontonym:Situation), (?A owl:differentFrom ?B), SubsetOf(?A, ?B) -> print(?A)]
+#[subclassrule: (?A rdf:type classification:Situation), (?B rdf:type classification:Situation), (?A owl:differentFrom ?B), SubsetOf(?A, ?B) -> SubclassOf(?A, ?B)]
+#[gasONRule: (?A placelab:gasReading ?B),ge(?B "2.5"^^xsd:double) -> print("gasIsOn"), createClassification(?A, "gasIsOn")]
+#[gasONRule: (?A ontonym:domain "GAS"), (?A ontonym:readingValue ?B), noValue(?C, provenance:derivedFrom ?A), ge(?B "2.5"^^xsd:double) -> print("gasIsOn"), createClassification(?A, "gasIsOn")]
+#[hasLocation: (?A rdf:type classifications:Situation) -> GetPrimaryLocation(?A)]
+[colocatedfeatures: (?A classifications:primaryLocation ?B), (?A classifications:identifiedBy ?C), (?C classifications:feature ?D), (?D location:locatedIn ?B) -> (?C classifications:primaryFeature true)]
+#[MOTION: (?A sensor:observedBy ?B) (?B rdf:type placelab:LIGHT), (?A classifications:readingValue ?C), greaterThan(?C, 5) -> createClassification(?A, "on")]
+#[light: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:LIGHT), (?A classifications:readingValue ?C), greaterThan(?C, 5) -> createClassification(?A, "on")]
+#[water: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:WATER), (?A classifications:readingValue ?C), greaterThan(?C, 100) -> createClassification(?A, "on")]
+#[gas: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:GAS), (?A classifications:readingValue ?C), greaterThan(?C, 5) -> createClassification(?A, "on")]
+#[motion: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:MOTION), (?A classifications:readingValue ?C), greaterThan(?C, 0) -> createClassification(?A, "on")]
+#[om: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:OM), (?A classifications:readingValue ?C), greaterThan(?C, 0) -> createClassification(?A, "on")]
+#[current: (?A sensor:observedBy ?B), (?A rdf:type event:InstantEvent), (?B rdf:type placelab:CURRENT), (?A classifications:readingValue ?C), greaterThan(?C, 0) -> createClassification(?A, "on")]
+#[kitchensink: (?A sensor:observedBy ?B),
+#(?C sensor:observedBy ?D), 
+#(?B rdf:type placelab:MOTION), 
+#(?D rdf:type placelab:OM), 
+#(?B location:locatedIn ?X), 
+#(?D location:locatedIn ?Y), 
+#(?A classifications:readingValue ?E),
+#(?B classifications:readingValue ?F), 
+#greaterThan(?E, 0),  
+#greaterThan(?E, 0), 
+#equal(?X, ?Y) 
+#-> 
+#print("LocatedIn", ?X)]
+  

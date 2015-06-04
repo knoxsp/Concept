@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.1//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_1.dtd">
+
+<!--
+  Checkstyle configuration that checks the Construct coding conventions.
+
+  Modified: 23/05/06 - Graeme Stevenson (graeme.stevenson@ucd.ie)
+  Original Author: Joe Kiniry (kiniry@ucd.ie)
+  Version: 0.1
+
+  Notes from Joe's Version:
+  These conventions are based upon:
+
+    - the Java Language Specification at
+      http://java.sun.com/docs/books/jls/second_edition/html/index.html
+
+    - the Sun Code Conventions at http://java.sun.com/docs/codeconv/
+
+    - the Javadoc guidelines at
+      http://java.sun.com/j2se/javadoc/writingdoccomments/index.html
+
+    - the JDK Api documentation http://java.sun.com/j2se/docs/api/index.html
+
+    - the KindSoftware code standard
+      http://www.kindsoftware.com/documents/whitepapers/code_standards/
+
+    - some best practices
+-->
+
+<module name="Checker">
+	<!-- set default severity to warnig to stay compatible -->
+    <property name="severity" value="warning"/>
+	<module name="SuppressionFilter">
+            <property name="file" value="${basedir}/suppressions.xml"/>
+        </module>
+
+	<!-- suppression filter for specific checks -->
+	<module name="SuppressionCommentFilter">
+	    <property name="offCommentFormat" value="CSOFF\: ([\w\|]+)"/>
+	    <property name="onCommentFormat" value="CSON\: ([\w\|]+)"/>
+	    <property name="checkFormat" value="$1"/>
+	</module>
+
+    <module name="TreeWalker">
+
+	<property name="tabWidth" value="2" />
+        
+	  <!-- Checks for Javadoc comments. -->
+        <!-- See http://checkstyle.sf.net/config_javadoc.html -->
+        <module name="JavadocType">
+          <property name="authorFormat" value=".*(.*@.*)"/>
+	<!-- <property name="versionFormat" value="^[0-9]+ [A-Z][a-z]+ [0-9][0-9][0-9][0-9]$"/> -->
+        </module>
+        <module name="JavadocVariable"/>
+        <module name="JavadocMethod"/>
+        <module name="JavadocStyle"/>
+
+
+	  <module name="Header">
+    		<property name="headerFile" value="${basedir}/java.header.txt"/>
+    		<property name="ignoreLines" value="2"/>
+	  </module>  
+
+
+        <!-- Checks for Naming Conventions. -->
+        <module name="ConstantName"/>
+        <module name="LocalFinalVariableName">
+          <property name="format" value="^[a-z][_a-zA-Z0-9]*$"/>
+        </module>
+        <module name="LocalVariableName">
+          <property name="format" value="^[a-z][_a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MemberName">
+          <property name="format" value="^my_[a-z][_a-zA-Z0-9]*$"/>
+        </module>
+        <module name="MethodName">
+          <property name="format" value="^[a-z][_a-zA-Z0-9]*$"/>
+        </module>
+        <module name="PackageName"> 
+          <property name="format" value="org.construct_infrastructure.*"/> 
+        </module> 
+        <module name="ParameterName">
+          <property name="format" value="(^a_[a-z][_a-zA-Z0-9]*$)|(^an_[a-z][_a-zA-Z0-9]*$)|(^the_[a-z][_a-zA-Z0-9]*$)|(^some_[a-z][_a-zA-Z0-9]*$)"/>
+        </module>
+        <module name="StaticVariableName"> 
+           <property name="format" value="^[a-z][_a-zA-Z0-9]*$"/> 
+        </module> 
+	 <module name="TypeName"/>
+
+
+        <!-- Checks for Imports  -->
+        <module name="AvoidStarImport"/>
+        <module name="IllegalImport"/>
+        <module name="RedundantImport"/>
+        <module name="UnusedImports"/>
+
+
+        <!-- Checks for Size Violations. -->
+        <module name="ExecutableStatementCount">
+          <property name="max" value="10"/>
+          <property name="tokens" value="CTOR_DEF"/>
+        </module>
+        <module name="ExecutableStatementCount">
+          <property name="max" value="25"/>
+          <property name="tokens" value="METHOD_DEF"/>
+        </module>
+        <module name="ExecutableStatementCount">
+          <property name="max" value="5"/>
+          <property name="tokens" value="INSTANCE_INIT"/>
+        </module>
+        <module name="ExecutableStatementCount">
+          <property name="max" value="10"/>
+          <property name="tokens" value="STATIC_INIT"/>
+        </module>
+
+
+	<!-- Checks for Length Violations. -->
+        <module name="FileLength">
+          <property name="max" value="500"/>
+        </module>
+        <module name="LineLength">
+          <property name="max" value="95"/>
+          <property name="ignorePattern" value="(^ *//\*@ .+$)|(^ *@.+$)"/>
+        </module>
+        <module name="MethodLength">
+          <property name="tokens" value="CTOR_DEF"/>
+          <property name="max" value="20"/>
+        </module>
+        <module name="MethodLength">
+          <property name="tokens" value="METHOD_DEF"/>
+          <property name="max" value="40"/>
+        </module>
+        <module name="AnonInnerLength"/>
+        <module name="ParameterNumber">
+          <property name="max" value="8"/>
+          <property name="tokens" value="CTOR_DEF,METHOD_DEF"/>
+        </module>
+
+        <!-- Checks for whitespace -->
+        <module name="EmptyForIteratorPad"/>
+        <module name="NoWhitespaceAfter"/>
+        <module name="NoWhitespaceBefore"/>
+        <module name="OperatorWrap">
+          <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR, 
+             BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, 
+             DIV_ASSIGN, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, 
+             LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, 
+             PLUS_ASSIGN, QUESTION, SL, SL_ASSIGN, SR, SR_ASSIGN, STAR, 
+             STAR_ASSIGN"/>
+          <property name="option" value="nl"/>
+        </module>
+        <module name="ParenPad">
+          <property name="option" value="nospace"/>
+        </module>
+        <module name="TabCharacter"/>
+        <module name="WhitespaceAfter">
+          <property name="tokens" value="COMMA, SEMI"/>
+        </module>
+        <module name="WhitespaceAround"/>
+
+        <!-- Modifier Checks  -->
+        <module name="ModifierOrder"/>
+        <module name="RedundantModifier"/>
+
+        <!-- Checks for Blocks  -->
+        <module name="AvoidNestedBlocks"/>
+        <module name="EmptyBlock"/>
+        <module name="RightCurly"/>
+
+
+
+        <!-- needed for suppression comment filter -->
+        <module name="FileContentsHolder"/>
+        <module name="EqualsHashCode"/>
+
+        <module name="IllegalInstantiation"/>
+        <module name="InnerAssignment"/>
+        <module name="LeftCurly">
+            <property name="option" value="eol"/>
+        </module>
+
+        <!-- Checks for Common Coding Problems -->
+        <module name="CovariantEquals"/>
+        <module name="DoubleCheckedLocking"/>
+        <module name="EmptyStatement"/>
+        <module name="EqualsHashCode"/>
+        <module name="FinalLocalVariable"/>
+        <module name="HiddenField"/>
+        <module name="InnerAssignment"/>
+        <module name="MagicNumber">
+          <property name="ignoreNumbers" value="-1, 0, 1"/>
+        </module>
+        <module name="MissingSwitchDefault"/>
+        <!-- <module name="RedundantThrows"/> -->
+       <module name="SimplifyBooleanExpression"/>
+        <module name="SimplifyBooleanReturn"/>
+        <module name="StringLiteralEquality"/>
+        <module name="NestedIfDepth">
+          <property name="max" value="2"/>
+        </module>
+        <module name="NestedTryDepth">
+          <property name="max" value="2"/>
+        </module>
+        <module name="SuperClone"/>
+        <module name="SuperFinalize"/>
+        <module name="IllegalCatch"/>
+        <module name="PackageDeclaration"/>
+        <module name="ReturnCount">
+          <property name="max" value="3"/>
+        </module>
+        <module name="IllegalType"/>
+        <module name="DeclarationOrder"/>
+        <module name="ParameterAssignment"/>
+        <module name="ExplicitInitialization"/>
+
+        <!-- Checks for Class Design  -->
+        <module name="VisibilityModifier">
+          <property name="packageAllowed" value="true"/>
+        </module>
+        <module name="FinalClass"/>
+        <module name="InterfaceIsType"/>
+        <module name="HideUtilityClassConstructor"/>
+        <module name="DesignForExtension"/>
+        <module name="MutableException"/>
+        <module name="ThrowsCount">
+          <property name="max" value="3"/>
+        </module>
+
+        <!-- Checks for various Metrics -->
+        <module name="CyclomaticComplexity"/>
+
+	<!-- Miscellaneous Other Checks -->
+
+        <module name="GenericIllegalRegexp">
+            <property name="format" value="System\.out\.println"/>
+            <property name="message" value="Never use System.out."/>
+        </module>
+
+		<!-- This ensures there are no main methods outside the package ie.ucd.srg.construct.main -->
+        <module name="UncommentedMain">
+    	  <property name="excludedClasses" value="^ie.ucd.srg.construct.main."/>
+		</module>
+        <module name="UpperEll"/>
+        <module name="ArrayTypeStyle"/>
+        <module name="FinalParameters"/>
+
+      <module name="Indentation">
+          <property name="basicOffset" value="3"/>
+          <property name="caseIndent" value="3"/>
+      </module> 
+
+         <module name="GenericIllegalRegexp"> 
+             <property name="format" value="this\.\w"/> 
+             <property name="message" value="Self-referencing with this. is not allowed."/> 
+         </module>
+
+
+         <module name="GenericIllegalRegexp"> 
+             <property name="format" value="&lt;JML&gt;|&lt;/JML\&gt;"/> 
+             <property name="message" value="Using the &lt;JML&gt;&lt;/JML&gt; style of JML specification is prohibited."/> 
+         </module>  
+
+
+<!--         <module name="GenericIllegalRegexp"> -->
+<!--             <property name="format" value="(@review)|(@todo)|(@design)|(@bug)|(@fixme)"/> -->
+<!--             <property name="message" value="Some code still needs review."/> -->
+<!--         </module> -->
+
+    </module>
+</module>

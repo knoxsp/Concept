@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<case domain="scatterbox" xsi:noNamespaceSchemaLocation="/home/pta/xml/cbmlv3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	
+<similarity username="default">
+		<feature name="situation" weight="1">
+			<measure name="scatterbox.similarity.SituationSimilarityMeasure"/>
+		</feature>
+		<feature name="time" weight="1">
+			<exact/>
+		</feature>
+			<feature name="hallbedroomdoor" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="halltoiletdoor" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="hallbathroomdoor" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="toiletflush" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="platescupboard" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="fridge" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="microwave" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="groceriescupboard" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="dishwasher" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="panscupboard" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="cupscupboard" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="frontdoor" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="freezer" weight="1">
+			<exact/>
+		</feature>
+		
+		<feature name="washingmachine" weight="1">
+			<exact/>
+		</feature>
+		
+
+	</similarity>
+	<!--<similarity username="coylel" extends="default"/>
+	<similarity username="joebloggs" extends="default"/>
+	-->
+</case>

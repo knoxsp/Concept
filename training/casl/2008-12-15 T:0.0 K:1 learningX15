@@ -1,0 +1,7 @@
+<case name="Case at: 2008-12-15T11:31:40.000Z(atdesk)"><location>CASLThirdFloor</location><time>1130-1200</time><activity>tenseconds</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-15T12:39:40.000Z(atdesk)"><location>LorcanDesk</location><time>1230-1300</time><activity>minute</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-15T15:45:20.000Z(atdesk)"><location>FourthFloorFoyer</location><time>1530-1600</time><activity>hour</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-15T15:52:20.000Z(atdesk)"><location>ThirdFloorFoyer</location><time>1530-1600</time><activity>tenseconds</activity><situation>atdesk</situation></case>
+<case name="Case at: 2008-12-15T16:21:20.000Z(break)"><location>KnoxDesk</location><time>1600-1630</time><activity>hour</activity><situation>break</situation></case>
+<case name="Case at: 2008-12-15T16:21:30.000Z(break)"><location>CASLThirdFloorCubeF</location><time>1600-1630</time><activity>hour</activity><situation>break</situation></case>
+<case name="Case at: 2008-12-15T16:21:50.000Z(break)"><location>ThirdFloorFoyer</location><time>1600-1630</time><activity>hour</activity><situation>break</situation></case>

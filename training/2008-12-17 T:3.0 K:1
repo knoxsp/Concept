@@ -1,0 +1,37 @@
+couch & livingroom & OM & 17.0 & 1.0
+remotecontrol & livingroom & OM & 2.0 & 0.99
+sink & powderroom & FLOW & 3.0 & 0.99
+chilisauce & kitchen & RFID-STICKER & 4.0 & 0.98
+frontdoor & hallway & OM & 8.0 & 0.98
+cabinet & kitchen & OM & 2.0 & 0.98
+towelholder & masterbathroom & OM & 5.0 & 0.98
+faucet & powderroom & OM & 4.0 & 0.97
+faucet & powderroom & OM & 4.0 & 0.97
+toilet & powderroom & OM & 4.0 & 0.97
+closet & hallway & OM & 1.0 & 0.96
+microwave & kitchen & OM & 2.0 & 0.95
+papertowel & kitchen & OM & 2.0 & 0.95
+bowl & livingroom & OM & 12.0 & 0.95
+waterdispenser & kitchen & OM & 10.0 & 0.95
+chair & diningroom & OM & 2.0 & 0.95
+couch & livingroom & OM & 33.0 & 0.94
+door & powderroom & OM & 6.0 & 0.94
+cabinet & kitchen & OM & 2.0 & 0.94
+circuit & kitchen & CURRENT & 25.0 & 0.91
+television & livingroom & OM & 248.0 & 0.91
+light & diningroom & CURRENT & 2.0 & 0.88
+toilet & powderroom & FLOW & 8.0 & 0.85
+remotecontrol & livingroom & OM & 152.0 & 0.83
+room & powderroom & MOTION & 78.0 & 0.78
+room & masterbathroom & MOTION & 72.0 & 0.76
+room & masterbedroom & MOTION & 70.0 & 0.74
+circuit & yard & CURRENT & 38.0 & 0.72
+light & livingroom & CURRENT & 30.0 & 0.67
+room & officehallway & MOTION & 75.0 & 0.55
+room & livingroom & MOTION & 166.0 & 0.48
+room & dinningroom & MOTION & 116.0 & 0.44
+light & livingroom & CURRENT & 416.0 & 0.44
+room & kitchenhallway & MOTION & 98.0 & 0.40
+
+
+
